@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./SignIn.module.css";
 
-export default function SignIn() {
+export default function SignIn({handleSwichPage}) {
   return (
     <div>
     <h1>Sign In</h1>
@@ -20,7 +20,7 @@ export default function SignIn() {
                 </div>
 
                 <div class={styles.button}>
-                    <a href="#">I do not have an account</a>
+                    <a href="#" onClick={handleSwichPage}>I do not have an account</a>
                     <button>Sign In</button>
                 </div>
             </form>

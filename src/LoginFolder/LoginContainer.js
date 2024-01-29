@@ -28,7 +28,7 @@ function LoginContainer() {
         >
           <h1>{toggle? "Sign Up" : "Sign In"}</h1>
         </div>
-        {toggle ? <SignIn /> : <SignUp />}
+        {toggle ? <SignIn handleSwichPage={handleSwichPage}/> : <SignUp handleSwichPage={handleSwichPage}/>}
       </div>
     </div>
   );

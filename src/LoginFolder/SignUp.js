@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./SignUp.module.css";
 
-function SignUp() {
+function SignUp({handleSwichPage}) {
   return (
 
     <div>
@@ -25,7 +25,7 @@ function SignUp() {
                     </div>
 
                     <div class={styles.button}>
-                        <a href="#">I'm already a member</a>
+                        <a href="#" onClick={handleSwichPage}>I'm already a member</a>
                         <button>Sign In</button>
                     </div>
                 </form>
