@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
+import logo from '../img/logo.png'
 
 function LoginContainer() {
   const [toggle, setToggle] = useState(true);
@@ -8,53 +9,56 @@ function LoginContainer() {
     setToggle(!toggle);
   };
   return (
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        height: "100vh",
-        }}
-    >
-      <div style={{ width: "40%", backgroundColor: "black" }}>
+    <div style={{ display: "flex", width: "100%", height: "100vh", }}>
+
+      <div style={{ width: "40%", backgroundColor: "black", display: "flex", justifyContent: "center", alignItems: "center"  }}>
         <div
           style={{
-            padding: "2rem",
-            paddingTop: "3rem",
+            // display: "flex",
+            // justifyContent: "center",
+            // alignItems: "center"
           }}
         >
-          <img
-            src="https://www.truad.co/wp-content/uploads/2023/11/logo_transparent_1-150x150.png"
-            alt="this is logo"
-            height="50%"
-            width="50%"
-          />
+          <div  style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+          }}>
+            <img
+              src={logo}
+              height="200px"
+              width="200px"
+            />
+          </div>
+          <div>
+            <p style={{ color: "white", fontSize: "25px" ,margin:"30px",textShadow:"1px 1px red"}}>
+              TruAD is an intelligent technology company backed by a strong team of
+              researchers, Oscar winners and data scientists
+            </p>
+          </div>
+
         </div>
-        <p style={{ color: "white" }}>
-          TruAD is an intelligent technology company backed by a strong team of
-          researchers, Oscar winners and data scientists
-        </p>
+
+
       </div>
       <div
         style={{
           width: "60%",
-          backgroundColor: "#2d3436",
-          backgroundImage: "linear-gradient(315deg, #2d3436 0%, #000000 74%)",
+          // backgroundColor: "#2d3436",
+          backgroundColor:"rgb(18, 18, 18)",
           display: "flex",
-          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          // flexDirection: "column",
           color: "white",
-          padding: "30px",
+
         }}
       >
-        <div
-          style={{ display: "flex", justifyContent: "end" }}
-          onClick={handleSwichPage}
-        >
-          <h1>{toggle ? "Sign Up" : "Sign In"}</h1>
-        </div>
+
         {toggle ? (
-          <SignIn handleSwichPage={handleSwichPage} />
+          <SignIn handleSwichPage={handleSwichPage} toggle={handleSwichPage} />
         ) : (
-          <SignUp handleSwichPage={handleSwichPage} />
+          <SignUp handleSwichPage={handleSwichPage} toggle={handleSwichPage} />
         )}
       </div>
     </div>
